@@ -50,7 +50,22 @@ module.exports = {
       height: {
         53: "53px",
         72: "72px",
+        178: "178px",
       },
+      width: {
+        271: "271px",
+        0.5: "2.5px",
+      },
+    },
+    screens: {
+      tablet: "679px",
+      // => @media (min-width: 640px) { ... }
+
+      laptop: "1024px",
+      // => @media (min-width: 1024px) { ... }
+
+      desktop: "1280px",
+      // => @media (min-width: 1280px) { ... }
     },
   },
   plugins: [require("@tailwindcss/forms")],

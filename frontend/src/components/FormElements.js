@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { CgCheck } from "react-icons/cg";
-import { MdKeyboardArrowDown, MdKeyboardArrowUp } from "react-icons/md";
 
 const FormElements = () => {
   const [dropDown, setDropDown] = useState(false);
@@ -27,9 +26,28 @@ const FormElements = () => {
             onClick={() => setDropDown(!dropDown)}
           >
             <span>Feature</span>
-            <span className="text-The-Rainbow-Fish">
-              {!dropDown ? <MdKeyboardArrowDown /> : <MdKeyboardArrowUp />}
-            </span>
+
+            {!dropDown ? (
+              <svg width="10" height="7" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M1 1l4 4 4-4"
+                  stroke="#4661E6"
+                  strokeWidth="2"
+                  fill="none"
+                  fillRule="evenodd"
+                />
+              </svg>
+            ) : (
+              <svg width="10" height="7" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M1 6l4-4 4 4"
+                  stroke="#4661E6"
+                  strokeWidth="2"
+                  fill="none"
+                  fillRule="evenodd"
+                />
+              </svg>
+            )}
           </button>
           {dropDown && (
             <ul className="absolute rounded-default shadow-md w-64 h-60 bg-white flex flex-col  divide-Jewel-Cave divide-opacity-20 divide-y top-19">

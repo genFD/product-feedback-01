@@ -1,5 +1,4 @@
 import React from "react";
-import { MdKeyboardArrowLeft } from "react-icons/md";
 
 const Buttons = () => {
   return (
@@ -36,14 +35,30 @@ const Buttons = () => {
           type="button"
           className="flex items-center justify-center gap-x-1 hover:underline transition-all duration-500 decoration-Ocean-Night text-heading-4"
         >
-          <MdKeyboardArrowLeft style={{ color: "#4661E6" }} />
+          <svg width="7" height="10" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M6 9L2 5l4-4"
+              stroke="#4661E6"
+              strokeWidth="2"
+              fill="none"
+              fillRule="evenodd"
+            />
+          </svg>
           <span className="text-Ocean-Night">Go back</span>
         </button>
         <button
           type="button"
-          className=" bg-Raven-Night rounded-default w-40 h-14 flex items-center justify-center gap-x-1 hover:underline transition-all duration-500 decoration-white text-heading-4"
+          className=" bg-Raven-Night rounded-default w-40 h-14 flex items-center justify-center gap-x-2 hover:underline transition-all duration-500 decoration-white text-heading-4"
         >
-          <MdKeyboardArrowLeft style={{ color: "#CDD2EE" }} />
+          <svg width="7" height="10" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M6 9L2 5l4-4"
+              stroke="#CDD2EE"
+              strokeWidth="2"
+              fill="none"
+              fillRule="evenodd"
+            />
+          </svg>
           <span className="text-white">Go back</span>
         </button>
       </div>

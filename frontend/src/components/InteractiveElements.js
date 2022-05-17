@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import { MdKeyboardArrowDown, MdKeyboardArrowUp } from "react-icons/md";
-import { CgCheck } from "react-icons/cg";
 
 const InteractiveElements = () => {
   const [dropDown, setDropDown] = useState(false);
@@ -13,10 +11,16 @@ const InteractiveElements = () => {
         Interactive elements
       </h1>
       <div className="flex justify-center gap-4 items-center">
-        <div className="vote-tag bg-Cotton-Ball w-10 h-53 flex flex-col items-center justify-center rounded-default hover:bg-Pale-Phthalo-Blue transition-colors duration-500 cursor-pointer active:bg-The-Rainbow-Fish">
-          <span className="text-The-Rainbow-Fish">
-            <MdKeyboardArrowUp />
-          </span>
+        <div className="vote-tag bg-Cotton-Ball w-10 h-53 flex flex-col items-center justify-center gap-1 rounded-default hover:bg-Pale-Phthalo-Blue transition-colors duration-500 cursor-pointer active:bg-The-Rainbow-Fish">
+          <svg width="10" height="7" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M1 6l4-4 4 4"
+              stroke="#4661E6"
+              strokeWidth="2"
+              fill="none"
+              fillRule="evenodd"
+            />
+          </svg>
           <span className="text-body-3 text-Jewel-Cave text-center font-bold">
             99
           </span>
@@ -35,14 +39,34 @@ const InteractiveElements = () => {
               setDropDown(!dropDown);
               setShowDropDown(!showDropDown);
             }}
-            className="text-sort-by text-heading-4 flex gap-1  text-Cotton-Ball transition-colors duration-200 cursor-pointer"
+            className="text-sort-by text-heading-4 flex items-center justify-center gap-1  text-Cotton-Ball transition-colors duration-200 cursor-pointer"
           >
             <span className="font-light">Sort by :</span>
             <span className="font-bold">Most Upvotes</span>
+
+            {!dropDown ? (
+              <svg width="10" height="7" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M1 1l4 4 4-4"
+                  stroke="#ffff"
+                  strokeWidth="2"
+                  fill="none"
+                  fillRule="evenodd"
+                />
+              </svg>
+            ) : (
+              <svg width="10" height="7" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M1 6l4-4 4 4"
+                  stroke="#ffff"
+                  strokeWidth="2"
+                  fill="none"
+                  fillRule="evenodd"
+                />
+              </svg>
+            )}
           </button>
-          <span className="text-white">
-            {!dropDown ? <MdKeyboardArrowDown /> : <MdKeyboardArrowUp />}
-          </span>
+
           {showDropDown && (
             <ul className="absolute rounded-default shadow-md  w-64 h-48 bg-white flex flex-col  divide-Jewel-Cave divide-opacity-20 divide-y top-20 left-10 ">
               {[
@@ -65,9 +89,20 @@ const InteractiveElements = () => {
                     >
                       {item}
                     </button>
-                    <span className="text-Singapore-Orchid">
-                      {checked && <CgCheck />}
-                    </span>
+                    {checked && (
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="13"
+                        height="11"
+                      >
+                        <path
+                          fill="none"
+                          stroke="#AD1FEA"
+                          strokeWidth="2"
+                          d="M1 5.233L4.522 9 12 1"
+                        />
+                      </svg>
+                    )}
                   </li>
                 );
               })}
