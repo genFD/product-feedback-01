@@ -1,8 +1,5 @@
 import React from "react";
 import { useGlobalContext } from "../context";
-import bgHeaderMobile from "../img/mobile/background-header.png";
-import bgHeaderTablet from "../img/tablet/background-header.png";
-import bgHeaderDesktop from "../img/desktop/background-header.png";
 import Keywords from "./Keywords";
 import Roadmap from "./Roadmap";
 
@@ -12,7 +9,7 @@ const NavBar = () => {
     <nav className="nav h-72 flex items-center justify-center relative  tablet:h-fit tablet:pt-14 tablet:pb-10 tablet:px-10">
       <div className="nav-center w-4/5 tablet:w-full ">
         <div className="nav-header w-full flex justify-between items-center tablet:grid tablet:grid-cols-3 tablet:gap-4 laptop:grid laptop:grid-cols-1 laptop:grid-rows-3 ">
-          <div className="logo tablet:w-56 tablet:h-44 ">
+          <div className="logo tablet:w-56 tablet:h-44 tablet:rounded-default tablet:flex tablet:items-center tablet:justify-center ">
             <h1 className="text-white font-bold text-body-2">Feedback Board</h1>
           </div>
           {isSidebarOpen ? (
@@ -34,11 +31,11 @@ const NavBar = () => {
               </svg>
             </button>
           )}
-          <div className="hidden tablet:block w-56 h-44 bg-Blood-Moon text-Raven-Night">
-            Keyword
+          <div className="keywords">
+            <Keywords />
           </div>
-          <div className=" hidden w-56 h-44 bg-Blue-Mana text-white tablet:block">
-            Roadmap
+          <div className="roadmap">
+            <Roadmap />
           </div>
         </div>
       </div>

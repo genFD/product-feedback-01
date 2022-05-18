@@ -32,7 +32,7 @@ picture {
 body {
   line-height: 1.5;
   min-height: 100vh;
-  /* background-color: brown; */
+  background-color: rgb(242, 244, 254, 1);
 }
 
 /* make images easier to work with */
@@ -73,6 +73,9 @@ select {
 .text-sort-by:hover {
   color: rgba(242, 244, 254, 0.5);
 }
+.home {
+  min-height: 100vh;
+}
 .container {
   padding-inline: 2em;
   margin-inline: auto;
@@ -90,7 +93,7 @@ select {
   align-items: flex-end;
   visibility: hidden;
   z-index: -1;
-  transition: all ease-in-out 5s;
+  /* transition: all ease-in-out 5s; */
   transform: scale(0);
   background: rgba(0, 0, 0, 0.5);
 }
@@ -102,6 +105,19 @@ select {
 .sidebar {
   height: calc(100vh - 72px);
   width: 271px;
+}
+.ux-tag {
+  min-width: 3rem;
+  max-width: max-content;
+  padding: 12px;
+}
+
+.table_width {
+  width: calc(223px - 48px);
+}
+.indicator {
+  width: 8px;
+  height: 8px;
 }
 /* .header {
   display: grid;
@@ -122,6 +138,12 @@ picture {
     background-image: url(./img/mobile/background-header.png);
     background-repeat: no-repeat;
     background-size: cover;
+  }
+  .keywords {
+    display: none;
+  }
+  .roadmap {
+    display: none;
   }
 }
 @media (min-width: 679px) {
