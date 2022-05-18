@@ -7,11 +7,9 @@ import Sidebartest from "../components/Sidebartest";
 
 const Home = () => {
   return (
-    <div className=" tablet:grid tablet:grid-cols-1 tablet:grid-rows-2 laptop:grid laptop:grid-cols-3 gap-4">
+    <div className="h-full laptop:grid-rows-2 laptop:grid laptop:grid-cols-3">
       <HeaderTest />
-      {/* <Sidebartest /> */}
       <ContentTest />
-      {/* <Sidebar /> */}
     </div>
   );
 };

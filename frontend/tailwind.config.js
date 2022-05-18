@@ -21,6 +21,7 @@ module.exports = {
       "Bleached-Silk": "#F2F2F2",
       "Garden-Fairy": "#CDD2EE",
       "Pale-Phthalo-Blue": "#CFD7FF",
+      Overlay: "rgba(0, 0, 0, 0.5)",
     },
     fontSize: {
       "body-1": ["16px", { lineHeight: "1.4375rem" }],
@@ -51,6 +52,7 @@ module.exports = {
         53: "53px",
         72: "72px",
         178: "178px",
+        605: "624px",
       },
       width: {
         271: "271px",

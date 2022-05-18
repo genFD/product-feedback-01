@@ -1,14 +1,16 @@
 import React from "react";
 import { useGlobalContext } from "../context";
 import NavBar from "./NavBar";
+import Sidebar from "./Sidebar";
 
 const HeaderTest = () => {
   const data = useGlobalContext();
   console.log(data);
   return (
-    <div className="laptop:col-span-1 bg-Blood-Moon">
+    <>
       <NavBar />
-    </div>
+      <Sidebar />
+    </>
   );
 };
 
