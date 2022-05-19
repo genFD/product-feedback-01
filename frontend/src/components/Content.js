@@ -1,9 +1,15 @@
 import React from "react";
+import SuggestionsHeader from "./SuggestionsHeader";
 
 const Content = () => {
   return (
-    <div className="laptop:col-span-2 laptop:row-span-2  desktop:col-span-3 tablet:row-span-3">
-      content test
+    <div
+      className="
+    tablet:flex tablet:flex-col tablet:items-center
+    laptop:items-start
+    laptop:pt-24 laptop:px-0 tablet:px-10 desktop:pl-6 desktop:pr-40 content_cont laptop:pr-12"
+    >
+      <SuggestionsHeader />
     </div>
   );
 };

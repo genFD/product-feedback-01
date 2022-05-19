@@ -3,7 +3,7 @@ import { RoadmapData } from "../data/headerData";
 
 const Roadmap = () => {
   return (
-    <div className="w-56 h-44 bg-white text-Raven-Night tablet:block pt-6 px-6">
+    <div className="w-56 h-44 bg-white text-Raven-Night tablet:block pt-6 px-6 rounded-default">
       <table className="table-fixed table_width">
         <thead className="h-9">
           <tr>

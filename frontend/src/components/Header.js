@@ -4,7 +4,7 @@ import Sidebar from "./Sidebar";
 
 const Header = () => {
   return (
-    <div className="laptop:flex laptop:justify-end">
+    <div className="header_cont tablet:py-11 laptop:pt-24">
       <Navbar />
       <Sidebar />
     </div>

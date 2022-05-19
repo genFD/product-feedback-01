@@ -4,7 +4,7 @@ import Header from "../components/Header";
 
 const Home = () => {
   return (
-    <div className="home laptop:grid-rows-1 laptop:grid laptop:grid-cols-3 desktop:grid-cols-4 tablet:grid tablet:grid-rows-4">
+    <div className="home laptop:flex laptop: gap-x-6 laptop:flex-row desktop:flex tablet:flex tablet:flex-col">
       <Header />
       <Content />
     </div>

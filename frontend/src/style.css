@@ -139,16 +139,25 @@ picture {
     background-repeat: no-repeat;
     background-size: cover;
   }
+  .suggest_stats {
+    display: none;
+  }
   .keywords {
     display: none;
   }
   .roadmap {
     display: none;
   }
+  .nav-center {
+    flex-basis: 80%;
+  }
 }
 @media (min-width: 679px) {
   .nav {
     background-image: none;
+  }
+  .nav-center {
+    flex-basis: 100%;
   }
   .logo {
     background-image: url(./img/tablet/background-header.png);
@@ -172,12 +181,14 @@ picture {
   }
 }
 
-/* @media (max-width: 768px) {
-  .nav_header {
-    background: url(./img/tablet/background-header.png) no-repeat;
-    background-size: cover;
+@media (min-width: 1024px) {
+  .content_cont {
+    flex-basis: 70%;
   }
-} */
+  .header_cont {
+    flex-basis: 30%;
+  }
+}
 
 /* @media (min-width: 1024px) {
   .nav_header {
