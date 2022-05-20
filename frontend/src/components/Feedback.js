@@ -2,7 +2,7 @@ import React from "react";
 
 const Feedback = () => {
   return (
-    <div className="bg-white w-327 h-200 tablet:h-151 tablet:w-689 laptop:w-825 rounded-default p-6 feedback_cont">
+    <div className="bg-white min-w-327 h-200 tablet:h-151 tablet:w-689 desktop:w-825 rounded-default p-6 feedback_cont">
       <div className="feedback_content_cont">
         <h2 className="feedback_title text-body-3 text-Raven-Night font-bold mb-2">
           Add tags for solutions
@@ -12,10 +12,10 @@ const Feedback = () => {
         </p>
 
         <div
-          className="ux-tag w-12 h-7 rounded-default bg-Cotton-Ball text-center text-body-3 font-semibold text-The-Rainbow-Fish flex items-center justify-center hover:bg-Pale-Phthalo-Blue transition-colors duration-500 cursor-pointer active:bg-The-Rainbow-Fish mb-4
+          className="ux-tag h-7 rounded-default bg-Cotton-Ball text-center text-body-3 font-semibold text-The-Rainbow-Fish flex items-center justify-center hover:bg-Pale-Phthalo-Blue transition-colors duration-500 cursor-pointer active:bg-The-Rainbow-Fish mb-4
         "
         >
-          Bug
+          Enhancement
         </div>
       </div>
       <footer className="tablet:hidden tablet:invisible flex justify-between items-center">
