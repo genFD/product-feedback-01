@@ -167,6 +167,25 @@ picture {
   .sidebar_cont {
     display: none;
   }
+  .feedback_cont {
+    display: flex;
+    justify-items: center;
+    column-gap: 40px;
+    padding-top: 28px;
+  }
+  .vote-tag {
+    order: 1;
+    /* border: 1px solid saddlebrown; */
+  }
+  .feedback_content_cont {
+    order: 2;
+    /* border: 1px solid green; */
+    flex-basis: 75%;
+  }
+  .comm_stats {
+    order: 3;
+    /* border: 1px solid blue; */
+  }
 }
 
 @media (max-width: 767px) {
