@@ -12,7 +12,7 @@ const SuggestionsHeader = () => {
   } = useGlobalContext();
 
   return (
-    <div className="h-14 min-w-375 tablet:w-689 bg-Raven-Night tablet:rounded-default desktop:w-825">
+    <header className="h-14 min-w-375 tablet:w-689 bg-Raven-Night tablet:rounded-default desktop:w-825">
       <div className="flex h-full justify-between items-center px-6">
         <div className="flex gap-9">
           <div className="suggest_stats flex gap-4">
@@ -107,7 +107,7 @@ const SuggestionsHeader = () => {
         </div>
         <AddFeedbackButton />
       </div>
-    </div>
+    </header>
   );
 };
 

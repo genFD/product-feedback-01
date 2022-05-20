@@ -7,7 +7,7 @@ import SuggestionsHeader from "./SuggestionsHeader";
 const Content = () => {
   const { empty } = useGlobalContext();
   return (
-    <div
+    <main
       className="flex flex-col gap-y-8
     tablet:gap-y-6 tablet:items-center tablet:px-10
     laptop:items-start
@@ -15,7 +15,7 @@ const Content = () => {
     >
       <SuggestionsHeader />
       {empty ? <Empty /> : <Feedbacks />}
-    </div>
+    </main>
   );
 };
 
