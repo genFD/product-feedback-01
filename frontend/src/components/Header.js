@@ -4,7 +4,7 @@ import Sidebar from "./Sidebar";
 
 const Header = () => {
   return (
-    <header className="header_cont tablet:py-11 laptop:pt-24">
+    <header className="header_cont tablet:py-11 laptop:pt-16">
       <Navbar />
       <Sidebar />
     </header>
