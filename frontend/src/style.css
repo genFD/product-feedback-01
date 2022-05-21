@@ -49,7 +49,9 @@ textarea,
 select {
   font: inherit;
 }
-
+select {
+  appearance: none;
+}
 /* remove animations for people who've turned them off */
 @media (prefers-reduced-motion: reduce) {
   *,
@@ -127,6 +129,7 @@ select {
     #28a7ed 100%
   );
 }
+
 /* .header {
   display: grid;
   grid-template-columns: 1fr;

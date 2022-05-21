@@ -1,8 +1,11 @@
 import React from "react";
+import { useGlobalContext } from "../context";
 
 const FeedbackNew = () => {
+  const { dropDown, setDropDown, checked, setChecked } = useGlobalContext();
+
   return (
-    <div className="flex flex-col gap-y-9 justify-center items-center pt-10 pb-16 px-6">
+    <div className="flex flex-col gap-y-9 justify-center items-center pt-10 pb-16 px-6 tablet:pt-14 tablet:pb-56 tablet:px-28 laptop:pt-20 laptop:px-72 laptop:pb-24 desktop:pt-24 desktop:pb-44 desktop:px-450">
       <div className="flex justify-start w-full pl-6">
         <header>
           <button
@@ -18,15 +21,17 @@ const FeedbackNew = () => {
                 fillRule="evenodd"
               />
             </svg>
-            <span className="text-Ocean-Night">Go back</span>
+            <span className="text-Ocean-Night font-bold text-body-3 capitalize tablet:text-heading-4">
+              Go Back
+            </span>
           </button>
         </header>
       </div>
       <form
-        className="bg-white w-full rounded-default h-708 pt-11 pb-6 px-6 relative"
+        className="bg-white w-full rounded-default h-708 pt-11 pb-6 px-6 relative tablet:pt-12 tablet:pb-10 tablet:px-11 tablet:h-657"
         action=""
       >
-        <div className="absolute w-10 h-10 -top-5 flex items-center justify-center rounded-full add_feed_cont_icon">
+        <div className="absolute w-10 h-10 -top-5 flex items-center justify-center rounded-full add_feed_cont_icon tablet:w-14 tablet:h-14 tablet:-top-7">
           <svg width="9" height="9" xmlns="http://www.w3.org/2000/svg">
             <text
               transform="translate(-24 -20)"
@@ -43,16 +48,16 @@ const FeedbackNew = () => {
           </svg>
         </div>
 
-        <h2 className="text-heading-3 text-Raven-Night font-bold mb-6">
+        <h2 className="text-heading-3 text-Raven-Night font-bold mb-6 tablet:text-heading-1 tablet:mb-10">
           Create New Feedback
         </h2>
         <div className="flex flex-col gap-y-6 mb-10">
           <section className="flex flex-col">
-            <h3 className="font-bold text-body-3 mb-1 text-Raven-Night">
+            <h3 className="font-bold tablet:text-heading-4 text-body-3 mb-1 text-Raven-Night">
               Feedback Title
             </h3>
             <label
-              className=" font-normal mb-4 text-Ocean-Night text-body-3"
+              className=" font-normal mb-4 text-Ocean-Night text-body-3 tablet:text-heading-4"
               htmlFor="title"
             >
               Add a short, descriptive headline
@@ -62,13 +67,97 @@ const FeedbackNew = () => {
               id="title"
               className="h-12 bg-Ghost-White rounded-md border-none text-Jewel-Cave text-body-3 active: border-The-Rainbow-Fish border"
             />
-            {/* <input
-              id="title"
-              className=" bg-Ghost-White h-12"
-              // value={title}
-              // placeholder="title"
-              // onChange={}
-            /> */}
+          </section>
+
+          <section className="flex flex-col">
+            <h3 className="font-bold tablet:text-heading-4 text-body-3 mb-1 text-Raven-Night">
+              Category
+            </h3>
+            <label
+              className=" font-normal mb-4 text-Ocean-Night text-body-3 tablet:text-heading-4"
+              htmlFor="title"
+            >
+              Choose a category for your feedback
+            </label>
+            <div className="custom_select relative">
+              <select className="h-12 w-full bg-Ghost-White rounded-md border-none text-Jewel-Cave text-body-3 active: border-The-Rainbow-Fish border ">
+                <option className="text-body-3 text-Jewel-Cave">Feature</option>
+              </select>
+              <span className="absolute top-0 right-0 h-full rounded-default flex items-center justify-center  bg-Ghost-White block w-16 pointer-events-none">
+                <svg width="10" height="7" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M1 1l4 4 4-4"
+                    stroke="#4661E6"
+                    strokeWidth="2"
+                    fill="none"
+                    fillRule="evenodd"
+                  />
+                </svg>
+              </span>
+              {/* {!dropDown ? (
+                <svg width="10" height="7" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M1 1l4 4 4-4"
+                    stroke="#4661E6"
+                    strokeWidth="2"
+                    fill="none"
+                    fillRule="evenodd"
+                  />
+                </svg>
+              ) : (
+                <svg width="10" height="7" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M1 6l4-4 4 4"
+                    stroke="#4661E6"
+                    strokeWidth="2"
+                    fill="none"
+                    fillRule="evenodd"
+                  />
+                </svg>
+              )} */}
+              {/* <select name="" id="">
+                {dropDown && (
+                  <option className="rounded-default shadow-md w-64 h-60 bg-white flex flex-col  divide-Jewel-Cave divide-opacity-20 divide-y top-19">
+                    {["Feature", "UI", "UX", "Enhancement", "Bug"].map(
+                      (item, index) => {
+                        return (
+                          <li
+                            key={index}
+                            className="h-1/4 flex justify-between p-3 text-Ocean-Night hover:text-Singapore-Orchid cursor-pointer 
+                  transition-colors duration-200
+                    "
+                          >
+                            <button
+                              onClick={() => setChecked(!checked)}
+                              className="text-body-1 
+                  "
+                            >
+                              {item}
+                            </button>
+                            <span className="text-Singapore-Orchid">
+                              {checked && (
+                                <svg
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  width="13"
+                                  height="11"
+                                >
+                                  <path
+                                    fill="none"
+                                    stroke="#AD1FEA"
+                                    strokeWidth="2"
+                                    d="M1 5.233L4.522 9 12 1"
+                                  />
+                                </svg>
+                              )}
+                            </span>
+                          </li>
+                        );
+                      }
+                    )}
+                  </option>
+                )}
+              </select> */}
+            </div>
           </section>
 
           <section className="flex flex-col">
@@ -84,30 +173,7 @@ const FeedbackNew = () => {
             <input
               type="text"
               id="title"
-              className="h-12 bg-Ghost-White rounded-md border-none text-Jewel-Cave text-body-3 active: border-The-Rainbow-Fish border"
-            />
-            {/* <input
-              id="title"
-              className=" bg-Ghost-White h-12"
-              // value={title}
-              // placeholder="title"
-              // onChange={}
-            /> */}
-          </section>
-          <section className="flex flex-col">
-            <h3 className="font-bold text-body-3 mb-1 text-Raven-Night">
-              Feedback Title
-            </h3>
-            <label
-              className=" font-normal mb-4 text-Ocean-Night text-body-3"
-              htmlFor="title"
-            >
-              Add a short, descriptive headline
-            </label>
-            <input
-              type="text"
-              id="title"
-              className="h-30 bg-Ghost-White rounded-md border-none text-Jewel-Cave text-body-3 active: border-The-Rainbow-Fish border "
+              className="h-30 bg-Ghost-White rounded-md border-none text-Jewel-Cave text-body-3 active: border-The-Rainbow-Fish tablet:h-24"
             />
             {/* <input
               id="title"
@@ -118,16 +184,16 @@ const FeedbackNew = () => {
             /> */}
           </section>
         </div>
-        <div className="flex flex-col gap-y-4 justify-center items-center w-full">
+        <div className="flex flex-col gap-y-4 justify-center items-center w-full tablet:flex-row tablet:gap-y-0 tablet:justify-end tablet:gap-x-4">
           <button
             type="button"
-            className=" bg-Singapore-Orchid rounded-default w-full h-11 hover:bg-After-Party-Pink transition-all duration-500 text-heading-4 text-Cotton-Ball text-center"
+            className=" bg-Singapore-Orchid rounded-default w-full h-11 hover:bg-After-Party-Pink transition-all duration-500 text-heading-4 text-Cotton-Ball text-center tablet:w-36 tablet:order-2"
           >
             Add Feedback
           </button>
           <button
             type="button"
-            className="  bg-Raven-Night rounded-default w-full h-11  hover:bg-Kimberlite transition-all duration-500 text-heading-4 text-Cotton-Ball text-center"
+            className="  bg-Raven-Night rounded-default w-full h-11  hover:bg-Kimberlite transition-all duration-500 text-heading-4 text-Cotton-Ball text-center tablet:w-24 tablet:order-1"
           >
             Cancel
           </button>
