@@ -2,7 +2,7 @@ import React from "react";
 
 const GobackAndRoadmap = () => {
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col items-start">
       <button
         type="button"
         className="flex items-center justify-center gap-x-1 hover:underline transition-all duration-500 decoration-Ocean-Night text-heading-4"

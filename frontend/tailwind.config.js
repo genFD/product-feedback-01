@@ -22,6 +22,7 @@ module.exports = {
       "Garden-Fairy": "#CDD2EE",
       "Pale-Phthalo-Blue": "#CFD7FF",
       Overlay: "rgba(0, 0, 0, 0.5)",
+      "Fresh-Lavender": "rgba(140, 146, 179, .25)",
     },
     fontSize: {
       "body-1": ["16px", { lineHeight: "1.4375rem" }],
@@ -57,6 +58,7 @@ module.exports = {
         605: "624px",
         40: "40px",
         200: "200px",
+        233: "233px",
         600: "600px",
         657: "657px",
         460: "460px",
@@ -78,8 +80,11 @@ module.exports = {
         327: "327px",
         52: "52px",
         450: "450px",
+        80: "80%",
       },
       padding: {
+        78: "78px",
+        156: "156px",
         450: "450px",
       },
     },
