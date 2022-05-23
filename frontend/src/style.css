@@ -195,6 +195,9 @@ picture {
     order: 3;
     /* border: 1px solid blue; */
   }
+  .roadmap_card {
+    flex-basis: 30%;
+  }
 }
 
 @media (max-width: 767px) {
@@ -239,4 +242,9 @@ picture {
   background-color: #ad1fea;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
+}
+@media (max-width: 679px) {
+  .roadmap_comm {
+    max-width: 300px;
+  }
 }
