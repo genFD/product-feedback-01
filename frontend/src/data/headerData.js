@@ -7,3 +7,10 @@ export const RoadmapData = [
 ];
 
 export const Statuses = ["Suggestion", "Planned", "In-Progress", "Live"];
+
+export const RoadmapStatuses = ["Planned", "In-Progress", "Live"];
+export const RoadmapStats = [
+  { status: "Planned", stats: 2 },
+  { status: "In-Progress", stats: 3 },
+  { status: "Live", stats: 1 },
+];

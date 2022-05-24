@@ -50,6 +50,7 @@ module.exports = {
         default: "10px",
       },
       height: {
+        6: "6px",
         53: "53px",
         72: "72px",
         100: "100px",
@@ -72,6 +73,7 @@ module.exports = {
       width: {
         69: "69px",
         93: "93px",
+        223: "223px",
         271: "271px",
         0.5: "2.5px",
         375: "375px",
