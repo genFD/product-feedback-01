@@ -265,3 +265,16 @@ picture {
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 }
+
+.active-btn {
+  color: #3a4374;
+  opacity: 1;
+  border-bottom: 4px solid #ad1fea;
+}
+/* .active-btn::after {
+  content: "";
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background-color: #a337f6;
+} */
