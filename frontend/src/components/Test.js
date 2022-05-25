@@ -3,7 +3,7 @@ import Card from "./Card";
 
 const Test = ({ requests, statuses }) => {
   return (
-    <main className="mt-8 hidden tablet:grid tablet:grid-cols-3 tablet:gap-x-2">
+    <main className="mt-8 hidden  tablet:grid tablet:grid-cols-3 tablet:gap-x-2 laptop:gap-x-4 desktop:gap-x-8">
       {/* {statuses.map((status, index) => {
         return (
           <div key={index} className="basis-1/3">
@@ -45,7 +45,7 @@ const Test = ({ requests, statuses }) => {
           {requests.map((item) => {
             if (item.status === "planned") {
               return (
-                <li>
+                <li key={item.id}>
                   <Card request={item} />
                 </li>
               );
@@ -67,7 +67,7 @@ const Test = ({ requests, statuses }) => {
           {requests.map((item) => {
             if (item.status === "in-progress") {
               return (
-                <li>
+                <li key={item.id}>
                   <Card request={item} />
                 </li>
               );
@@ -89,7 +89,7 @@ const Test = ({ requests, statuses }) => {
           {requests.map((item) => {
             if (item.status === "live") {
               return (
-                <li>
+                <li key={item.id}>
                   <Card request={item} />
                 </li>
               );

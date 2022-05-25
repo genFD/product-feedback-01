@@ -1,12 +1,11 @@
 import React from "react";
 
 const RoadmapCards = ({ requests }) => {
-  console.log(requests);
   return requests.map((request) => {
     return (
       <div
         key={request.id}
-        className={`roadmap_card w-80 h-233 tablet:pb-6 tablet:h-251 tablet:w-223 border pt-6 bg-white rounded-default after:content-[''] after:absolute after:w-full after:h-6 after:top-0 after:rounded-t-default ${
+        className={`roadmap_card w-80 h-233 tablet:pb-6 tablet:h-251 tablet:w-223 pt-6 bg-white rounded-default after:content-[''] after:absolute after:w-full after:h-6 after:top-0 after:rounded-t-default ${
           request.status === "planned"
             ? "after:bg-Steamed-Salmon"
             : request.status === "in-progress"

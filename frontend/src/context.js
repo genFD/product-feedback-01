@@ -1,6 +1,11 @@
 import React, { useState, useContext, createContext } from "react";
+import { data } from "./data";
 
 const AppContext = createContext();
+
+const requests = data.productRequests.filter(
+  (item) => item.status !== "suggestion"
+);
 
 const AppProvider = ({ children }) => {
   const [isSidebarOpen, setOpenSideBar] = useState(false);
@@ -8,6 +13,7 @@ const AppProvider = ({ children }) => {
   const [checked, setChecked] = useState(false);
   const [dropDown, setDropDown] = useState(false);
   const [empty, setEmpty] = useState(true);
+  const [requestsList, setRequestsList] = useState(requests);
 
   const openSidebar = () => {
     setOpenSideBar(true);
@@ -30,6 +36,8 @@ const AppProvider = ({ children }) => {
         setChecked,
         dropDown,
         setDropDown,
+        requestsList,
+        setRequestsList,
       }}
     >
       {children}

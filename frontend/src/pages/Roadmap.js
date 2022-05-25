@@ -1,20 +1,50 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import AddFeedbackButton from "../components/AddFeedbackButton";
 import GobackAndRoadmap from "../components/GobackAndRoadmap";
 import RoadmapCards from "../components/RoadmapCard";
-import RoadmapHeader from "../components/RoadmapHeader";
 import Test from "../components/Test";
-import test from "../components/Test";
-
+import { useGlobalContext } from "../context";
 import { data } from "../data";
 
-const requests = data.productRequests.filter(
-  (item) => item.status !== "suggestion"
-);
+// const getWidth = () => {
+//   return (
+//     window.innerWidth ||
+//     document.documentElement.clientWidth ||
+//     document.body.clientWidth
+//   );
+// };
+function resize(setwidth) {
+  setwidth(window.innerWidth);
+}
+// const useWindowSize = () => {
+//   const [width, setWidth] = useState(window.innerWidth);
+
+//   useEffect(() => {
+//     window.addEventListener("resize", resize(setWidth));
+//     return () => {
+//       window.removeEventListener("resize", handleResize);
+//     };
+//   }, []);
+
+//   return size;
+// };
 
 const Roadmap = () => {
-  // const [value, setValue] = useState(0);
-  const [requestsList, setRequestsList] = useState(requests);
+  const { requestsList } = useGlobalContext();
+  const [requests, setRequests] = useState(requestsList);
+
+  const repopulateRequests = () => {
+    if (window.innerWidth >= 679) {
+      setRequests(requestsList);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("resize", repopulateRequests);
+    return () => {
+      window.removeEventListener("resize", repopulateRequests);
+    };
+  }, []);
 
   const statuses = [
     ...new Set(
@@ -23,11 +53,10 @@ const Roadmap = () => {
         .filter((status) => status !== "suggestion")
     ),
   ];
-  // console.log(productRequests);
 
   const filterItems = (status) => {
-    const newItems = requests.filter((item) => item.status === status);
-    setRequestsList(newItems);
+    const newItems = requestsList.filter((item) => item.status === status);
+    setRequests(newItems);
   };
 
   return (
@@ -74,20 +103,12 @@ const Roadmap = () => {
           );
         })}
       </div>
-
-      <div className="pl-10 mb-6 tablet:pl-10 desktop:px-156 tablet:hidden ">
-        <RoadmapHeader
-          itemsLength={requestsList.length}
-          requestsStatus={requestsList[0].status}
-          statuses={statuses}
-        />
+      <div className="px-10 pb-20 desktop:px-156 hidden tablet:block">
+        <Test requests={requests} statuses={statuses} />
       </div>
-      <div className="px-10">
-        <Test requests={requestsList} statuses={statuses} />
+      <div className="flex flex-col pb-20 items-center gap-y-4 tablet:hidden">
+        <RoadmapCards requests={requests} />
       </div>
-      {/* <div className="flex flex-col items-center gap-y-4">
-        <RoadmapCards requests={requestsList} />
-      </div> */}
     </>
   );
 };
