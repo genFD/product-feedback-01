@@ -9,7 +9,7 @@ const CommentsInput = () => {
         </h2>
       </header>
       <textarea
-        className="w-full bg-Ghost-White pt-4 pl-4 mb-4"
+        className="w-full bg-Ghost-White pt-4 pl-4 mb-4 rounded-md"
         placeholder="Type your comment here"
         id=""
         maxLength="250"

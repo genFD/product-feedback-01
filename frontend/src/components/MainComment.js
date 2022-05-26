@@ -1,5 +1,6 @@
 import React from "react";
 import profilePic from "../assets/user-images/image-elijah.jpg";
+import MainCommentThread from "./MainCommentThread";
 
 const MainComment = () => {
   return (
@@ -33,7 +34,7 @@ const MainComment = () => {
           currently has.
         </p>
       </div>
-      <div className="h-one bg-Fresh-Lavender w-full"></div>
+      <div className="h-one bg-Fresh-Lavender w-full mb-6"></div>
     </div>
   );
 };
