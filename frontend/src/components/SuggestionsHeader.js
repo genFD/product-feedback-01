@@ -1,15 +1,12 @@
+import { useState } from "react";
 import { useGlobalContext } from "../context";
 import AddFeedbackButton from "./AddFeedbackButton";
 
 const SuggestionsHeader = () => {
-  const {
-    setDropDown,
-    dropDown,
-    showDropDown,
-    setShowDropDown,
-    setChecked,
-    checked,
-  } = useGlobalContext();
+  const [value, setValue] = useState(0);
+
+  const { setDropDown, dropDown, showDropDown, setShowDropDown } =
+    useGlobalContext();
 
   return (
     <header className="h-14 min-w-375 tablet:w-689 bg-Raven-Night tablet:rounded-default desktop:w-825">
@@ -74,17 +71,20 @@ const SuggestionsHeader = () => {
                     <li
                       key={index}
                       className="h-1/4 flex justify-between p-3 text-Ocean-Night hover:text-Singapore-Orchid cursor-pointer 
-                  transition-colors duration-200
+                  transition-colors duration-200 
                   "
                     >
                       <button
-                        onClick={() => setChecked(!checked)}
+                        onClick={() => {
+                          setValue(index);
+                        }}
                         className="text-body-1 
                   "
                       >
                         {item}
                       </button>
-                      {checked && (
+
+                      {value === index && (
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           width="13"

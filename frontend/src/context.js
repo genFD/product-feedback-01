@@ -16,6 +16,9 @@ const AppProvider = ({ children }) => {
   const [requestsList, setRequestsList] = useState(requests);
   const [usersData, setUsersData] = useState(data);
 
+  const checkVote = (id) => {
+    setChecked(!checked);
+  };
   const openSidebar = () => {
     setOpenSideBar(true);
   };

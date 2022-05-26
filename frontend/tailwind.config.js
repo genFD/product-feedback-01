@@ -21,6 +21,7 @@ module.exports = {
       "Bleached-Silk": "#F2F2F2",
       "Garden-Fairy": "#CDD2EE",
       "Pale-Phthalo-Blue": "#CFD7FF",
+      "Periwinkle-Blue": "#8397F8",
       Overlay: "rgba(0, 0, 0, 0.5)",
       "Fresh-Lavender": "rgba(140, 146, 179, .25)",
     },

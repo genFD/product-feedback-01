@@ -1,9 +1,12 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const GobackAndRoadmap = () => {
+  const navigate = useNavigate();
   return (
     <div className="flex flex-col items-start">
       <button
+        onClick={() => navigate(-1)}
         type="button"
         className="flex items-center justify-center gap-x-1 hover:underline transition-all duration-500 decoration-Ocean-Night text-heading-4"
       >

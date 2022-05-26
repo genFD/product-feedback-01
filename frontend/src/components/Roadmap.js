@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { RoadmapData } from "../data/headerData";
 
 const Roadmap = () => {
@@ -8,14 +9,18 @@ const Roadmap = () => {
         <thead className="h-9">
           <tr>
             <th className="w-2/3 text-left">Roadmap</th>
-            <th className=" w-1/3">View</th>
+            <Link to="/roadmap">
+              <th className=" w-1/3 cursor-pointer hover:underline text-The-Rainbow-Fish hover:text-Periwinkle-Blue underline text-body-3">
+                View
+              </th>
+            </Link>
           </tr>
         </thead>
         <tbody className="table_width">
           {RoadmapData.map((item) => (
             <tr key={item.id}>
               <td className="">
-                <div className="flex gap-x-2 items-center">
+                <div className="flex gap-x-2 items-center text-Ocean-Night text-body-1">
                   <div
                     className={`indicator
                       ${
@@ -33,7 +38,9 @@ const Roadmap = () => {
                 </div>
               </td>
 
-              <td className=" flex justify-center">{item.number}</td>
+              <td className=" flex justify-center text-body-1 text-Ocean-Night font-bold">
+                {item.number}
+              </td>
             </tr>
           ))}
         </tbody>
