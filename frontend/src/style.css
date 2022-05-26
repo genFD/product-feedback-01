@@ -49,6 +49,9 @@ textarea,
 select {
   font: inherit;
 }
+textarea {
+  resize: none;
+}
 
 /* remove animations for people who've turned them off */
 @media (prefers-reduced-motion: reduce) {
@@ -271,10 +274,5 @@ picture {
   opacity: 1;
   border-bottom: 4px solid #ad1fea;
 }
-/* .active-btn::after {
-  content: "";
-  position: absolute;
-  width: 3px;
-  height: 3px;
-  background-color: #a337f6;
-} */
+.feedback_cont {
+}

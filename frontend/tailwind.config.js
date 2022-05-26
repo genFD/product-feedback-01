@@ -50,6 +50,7 @@ module.exports = {
         default: "10px",
       },
       height: {
+        one: "1px",
         6: "6px",
         53: "53px",
         72: "72px",
@@ -60,6 +61,7 @@ module.exports = {
         40: "40px",
         200: "200px",
         233: "233px",
+        234: "234px",
         251: "251px",
         600: "600px",
         657: "657px",
@@ -87,7 +89,9 @@ module.exports = {
       },
       padding: {
         78: "78px",
+        88: "88px",
         156: "156px",
+        355: "355px",
         450: "450px",
       },
     },

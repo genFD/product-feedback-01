@@ -4,7 +4,7 @@ const GobackButton = () => {
   return (
     <button
       type="button"
-      className="flex items-center justify-center gap-x-1 hover:underline transition-all duration-500 decoration-Ocean-Night text-heading-4"
+      className="flex items-center justify-center gap-x-1 hover:underline transition-all duration-500 decoration-Ocean-Night text-heading-4 h-fit"
     >
       <svg width="7" height="10" xmlns="http://www.w3.org/2000/svg">
         <path

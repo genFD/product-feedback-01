@@ -12,8 +12,9 @@ const AppProvider = ({ children }) => {
   const [showDropDown, setShowDropDown] = useState(false);
   const [checked, setChecked] = useState(false);
   const [dropDown, setDropDown] = useState(false);
-  const [empty, setEmpty] = useState(true);
+  const [empty, setEmpty] = useState(false);
   const [requestsList, setRequestsList] = useState(requests);
+  const [usersData, setUsersData] = useState(data);
 
   const openSidebar = () => {
     setOpenSideBar(true);
@@ -25,6 +26,8 @@ const AppProvider = ({ children }) => {
   return (
     <AppContext.Provider
       value={{
+        usersData,
+        setUsersData,
         empty,
         setEmpty,
         isSidebarOpen,
