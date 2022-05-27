@@ -232,7 +232,7 @@ picture {
   content: "";
   background-color: #647196;
   position: absolute;
-  min-height: 216px;
+  min-height: 60%;
   width: 1px;
   left: 0px;
   top: 160px;
