@@ -223,6 +223,9 @@ picture {
   .card_roadmap {
     /* min-height: 251px; */
   }
+  .second_main_comment::after {
+    min-height: 267px;
+  }
 }
 
 @media (max-width: 767px) {
@@ -275,4 +278,23 @@ picture {
   border-bottom: 4px solid #ad1fea;
 }
 .feedback_cont {
+}
+.second_main_comment {
+  position: relative;
+}
+.reply_container::after {
+  content: "";
+  background-color: #647196;
+  position: absolute;
+  min-height: 216px;
+  width: 1px;
+  left: 0px;
+  top: 140px;
+  opacity: 10%;
+}
+.reply_container {
+  position: relative;
+}
+.comments_container > * {
+  margin-left: 48px;
 }

@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { CgCheck } from "react-icons/cg";
+import { Tags } from "../data/headerData";
 
 const FormElements = () => {
   const [dropDown, setDropDown] = useState(false);
   const [checked, setChecked] = useState(false);
+
   return (
     <div>
       <h1 className="text-Raven-Night text-heading-1 mb-4 underline">
@@ -51,29 +53,27 @@ const FormElements = () => {
           </button>
           {dropDown && (
             <ul className="absolute rounded-default shadow-md w-64 h-60 bg-white flex flex-col  divide-Jewel-Cave divide-opacity-20 divide-y top-19">
-              {["Feature", "UI", "UX", "Enhancement", "Bug"].map(
-                (item, index) => {
-                  return (
-                    <li
-                      key={index}
-                      className="h-1/4 flex justify-between p-3 text-Ocean-Night hover:text-Singapore-Orchid cursor-pointer 
+              {Tags.map((item, index) => {
+                return (
+                  <li
+                    key={index}
+                    className="h-1/4 flex justify-between p-3 text-Ocean-Night hover:text-Singapore-Orchid cursor-pointer 
                   transition-colors duration-200
                     "
-                    >
-                      <button
-                        onClick={() => setChecked(!checked)}
-                        className="text-body-1 
+                  >
+                    <button
+                      onClick={() => setChecked(!checked)}
+                      className="text-body-1 
                   "
-                      >
-                        {item}
-                      </button>
-                      <span className="text-Singapore-Orchid">
-                        {checked && <CgCheck />}
-                      </span>
-                    </li>
-                  );
-                }
-              )}
+                    >
+                      {item}
+                    </button>
+                    <span className="text-Singapore-Orchid">
+                      {checked && <CgCheck />}
+                    </span>
+                  </li>
+                );
+              })}
             </ul>
           )}
         </div>
