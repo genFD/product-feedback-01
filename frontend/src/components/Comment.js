@@ -20,7 +20,7 @@ const Comment = () => {
           Reply
         </button>
       </header>
-      <p className="text-Ocean-Night text-body-3">
+      <p className="text-Ocean-Night tablet:ml-14 text-body-3">
         Also, please allow styles to be applied based on system preferences. I
         would love to be able to browse Frontend Mentor in the evening after my
         device’s dark mode turns on without the bright background it currently
