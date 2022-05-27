@@ -150,7 +150,7 @@ const FeedbackEdit = () => {
               Include any specific comments on what should be improved, added,
               etc.
             </label>
-            <input
+            <textarea
               type="text"
               id="title"
               className="h-30 bg-Ghost-White rounded-md border-none text-Jewel-Cave text-body-3 active: border-The-Rainbow-Fish tablet:h-24"

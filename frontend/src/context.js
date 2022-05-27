@@ -13,6 +13,7 @@ const AppProvider = ({ children }) => {
   const [checked, setChecked] = useState(false);
   const [dropDown, setDropDown] = useState(false);
   const [empty, setEmpty] = useState(false);
+  const [showReplyInput, setShowReplyInput] = useState(false);
   const [requestsList, setRequestsList] = useState(requests);
   const [usersData, setUsersData] = useState(data);
 
@@ -26,6 +27,8 @@ const AppProvider = ({ children }) => {
   return (
     <AppContext.Provider
       value={{
+        showReplyInput,
+        setShowReplyInput,
         usersData,
         setUsersData,
         empty,

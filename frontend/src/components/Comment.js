@@ -1,7 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import profilePic from "../assets/user-images/image-elijah.jpg";
+import { useGlobalContext } from "../context";
+import ReplyInput from "./ReplyInput";
 
 const Comment = () => {
+  const [value, setValue] = useState(0);
+  const { showReplyInput, setShowReplyInput } = useGlobalContext();
+
   return (
     <div className="comment mb-6">
       <header className="w-full flex justify-between mb-4">
@@ -16,7 +21,12 @@ const Comment = () => {
             </span>
           </div>
         </div>
-        <button className=" text-The-Rainbow-Fish text-body-3 font-semibold">
+        <button
+          onClick={() => {
+            setShowReplyInput(!showReplyInput);
+          }}
+          className=" text-The-Rainbow-Fish text-body-3 font-semibold hover:underline"
+        >
           Reply
         </button>
       </header>
@@ -26,6 +36,7 @@ const Comment = () => {
         device’s dark mode turns on without the bright background it currently
         has.
       </p>
+      {showReplyInput && <ReplyInput />}
     </div>
   );
 };
