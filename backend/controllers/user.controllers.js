@@ -55,4 +55,13 @@ const registerUser = handleAsync(async (req, res) => {
   }
 });
 
-module.exports = { loginUser, registerUser };
+const getUser = handleAsync(async (req, res) => {
+  const user = {
+    id: req.user._id,
+    email: req.user.email,
+    name: req.user.name,
+  };
+  res.status(StatusCodes.OK).json(user);
+});
+
+module.exports = { loginUser, registerUser, getUser };
