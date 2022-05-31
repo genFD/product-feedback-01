@@ -4,7 +4,7 @@ import AddFeedbackButton from "./AddFeedbackButton";
 
 const SuggestionsHeader = () => {
   const [value, setValue] = useState(0);
-  const { setDropDown, dropDown, showDropDown, setShowDropDown, requestsList } =
+  const { setDropDown, dropDown, showDropDown, setShowDropDown, suggestions } =
     useGlobalContext();
 
   return (
@@ -22,7 +22,7 @@ const SuggestionsHeader = () => {
               </svg>
             </span>
             <span className="text-white text-heading-3">
-              {requestsList.length} Suggestions
+              {suggestions.length} Suggestions
             </span>
           </div>
 

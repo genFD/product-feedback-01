@@ -1,7 +1,16 @@
 import React from "react";
+import { useGlobalContext } from "../context";
 import { Tags } from "../data/headerData";
 
 const Keywords = () => {
+  const { requestsList } = useGlobalContext();
+  const categories = [
+    "All",
+    ...new Set(requestsList.map((item) => item.category)),
+    "UX",
+    "UI",
+  ];
+
   return (
     <div className="flex w-56 h-44 rounded-default bg-white flex-wrap gap-x-2 pt-6 pl-6">
       {Tags.map((tag, index) => (

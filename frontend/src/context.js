@@ -32,10 +32,14 @@ const AppProvider = ({ children }) => {
   const closeSidebar = () => {
     setOpenSideBar(false);
   };
+  const suggestions = requestsList.filter(
+    (item) => item.status === "suggestion"
+  );
 
   return (
     <AppContext.Provider
       value={{
+        suggestions,
         showReplyInput,
         setShowReplyInput,
         usersData,

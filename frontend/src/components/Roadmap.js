@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useGlobalContext } from "../context";
-import { RoadmapData } from "../data/headerData";
+import countOccurrences from "../utils/counter";
 
 const Roadmap = () => {
   const { requestsList } = useGlobalContext();
@@ -13,6 +13,7 @@ const Roadmap = () => {
         .filter((status) => status !== "suggestion")
     ),
   ];
+
   return (
     <div className="w-56 h-44 bg-white text-Raven-Night tablet:block pt-6 px-6 rounded-default">
       <table className="table-fixed table_width">
@@ -27,29 +28,29 @@ const Roadmap = () => {
           </tr>
         </thead>
         <tbody className="table_width">
-          {RoadmapData.map((item) => (
-            <tr key={item.id}>
+          {statuses.map((item, index) => (
+            <tr key={index}>
               <td className="">
-                <div className="flex gap-x-2 items-center text-Ocean-Night text-body-1">
+                <div className="flex gap-x-2 items-center text-Ocean-Night text-body-1 capitalize">
                   <div
                     className={`indicator
                       ${
-                        item.status === "Planned"
+                        item === "planned"
                           ? "bg-Steamed-Salmon"
-                          : item.status === "In-Progress"
+                          : item === "in-progress"
                           ? "bg-Singapore-Orchid"
-                          : item.status === "Live"
+                          : item === "live"
                           ? "bg-Blue-Mana"
                           : null
                       }
                       rounded-full`}
                   ></div>
-                  {item.status}
+                  {item}
                 </div>
               </td>
 
               <td className=" flex justify-center text-body-1 text-Ocean-Night font-bold">
-                {item.number}
+                {countOccurrences(requestsList, item)}
               </td>
             </tr>
           ))}
