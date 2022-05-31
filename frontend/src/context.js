@@ -1,6 +1,6 @@
-import React, { useState, useContext, createContext } from "react";
+import React, { useState, useContext, createContext, useEffect } from "react";
 import { data } from "./data";
-
+import axios from "axios";
 const AppContext = createContext();
 
 const requests = data.productRequests.filter(
@@ -14,8 +14,17 @@ const AppProvider = ({ children }) => {
   const [dropDown, setDropDown] = useState(false);
   const [empty, setEmpty] = useState(false);
   const [showReplyInput, setShowReplyInput] = useState(false);
-  const [requestsList, setRequestsList] = useState(requests);
+  const [requestsList, setRequestsList] = useState([]);
   const [usersData, setUsersData] = useState(data);
+
+  const fetchRequests = async () => {
+    const { data } = await axios.get(`http://localhost:4000/api/feedbacks`);
+    setRequestsList(data);
+  };
+
+  useEffect(() => {
+    fetchRequests();
+  }, []);
 
   const openSidebar = () => {
     setOpenSideBar(true);

@@ -1,8 +1,18 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useGlobalContext } from "../context";
 import { RoadmapData } from "../data/headerData";
 
 const Roadmap = () => {
+  const { requestsList } = useGlobalContext();
+
+  const statuses = [
+    ...new Set(
+      requestsList
+        .map((item) => item.status)
+        .filter((status) => status !== "suggestion")
+    ),
+  ];
   return (
     <div className="w-56 h-44 bg-white text-Raven-Night tablet:block pt-6 px-6 rounded-default">
       <table className="table-fixed table_width">

@@ -27,8 +27,23 @@ const feedbackSchema = mongoose.Schema(
     },
     comments: [
       {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'User',
+        content: String,
+        user: {
+          image: String,
+          name: String,
+          username: String,
+        },
+        replies: [
+          {
+            content: String,
+            replyingTo: String,
+            user: {
+              image: String,
+              name: String,
+              username: String,
+            },
+          },
+        ],
       },
     ],
   },
