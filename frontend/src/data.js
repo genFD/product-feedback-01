@@ -35,6 +35,7 @@ export const data = {
         },
       ],
     },
+
     {
       id: 2,
       title: "Add a dark theme option",
