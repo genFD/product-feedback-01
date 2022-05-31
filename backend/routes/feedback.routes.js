@@ -4,10 +4,13 @@ const {
   createFeedback,
   getFeedbacks,
   getFeedback,
+  createComment,
+  editFeedback,
+  deleteFeedback,
 } = require('../controllers/feedback.controller.js');
 
 router.route('/').get(getFeedbacks).post(createFeedback);
 
-router.route('/:id').get(getFeedback).delete().put();
+router.route('/:id').get(getFeedback).delete(deleteFeedback).put(editFeedback);
 
 module.exports = router;

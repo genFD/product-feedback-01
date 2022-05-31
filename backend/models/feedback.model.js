@@ -14,12 +14,12 @@ const feedbackSchema = mongoose.Schema(
     },
     upvotes: {
       type: Number,
-      required: true,
+      default: 0,
     },
     status: {
       type: String,
-      required: true,
       enum: ['suggestion', 'planned', 'in-progress', 'live'],
+      default: 'suggestion',
     },
     description: {
       type: String,
@@ -47,9 +47,6 @@ const feedbackSchema = mongoose.Schema(
       },
     ],
   },
-
-  {
-    timeStamps: true,
-  }
+  { timestamps: true }
 );
 module.exports = mongoose.model('Feedback', feedbackSchema);
