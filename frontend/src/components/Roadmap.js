@@ -4,15 +4,7 @@ import { useGlobalContext } from "../context";
 import countOccurrences from "../utils/counter";
 
 const Roadmap = () => {
-  const { requestsList } = useGlobalContext();
-
-  const statuses = [
-    ...new Set(
-      requestsList
-        .map((item) => item.status)
-        .filter((status) => status !== "suggestion")
-    ),
-  ];
+  const { requestsList, statuses } = useGlobalContext();
 
   return (
     <div className="w-56 h-44 bg-white text-Raven-Night tablet:block pt-6 px-6 rounded-default">

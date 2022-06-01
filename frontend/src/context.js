@@ -32,13 +32,31 @@ const AppProvider = ({ children }) => {
   const closeSidebar = () => {
     setOpenSideBar(false);
   };
+
+  const statuses = [
+    ...new Set(
+      requestsList
+        .map((item) => item.status)
+        .filter((status) => status !== "suggestion")
+    ),
+  ];
+
   const suggestions = requestsList.filter(
     (item) => item.status === "suggestion"
   );
+  const categories = [
+    ...new Set(
+      requestsList.map((request) => {
+        return request.category;
+      })
+    ),
+  ];
 
   return (
     <AppContext.Provider
       value={{
+        categories,
+        statuses,
         suggestions,
         showReplyInput,
         setShowReplyInput,

@@ -1,4 +1,4 @@
-export const Tags = ["All", "UX", "UI", "Enhancement", "Bug", "Feature"];
+export const Tags = ["All", "UX", "UI", "Enhancement", "Bug", "feature"];
 
 export const RoadmapData = [
   { id: 1, indicator: "#F49F85", status: "Planned", number: 2 },

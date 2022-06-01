@@ -1,10 +1,28 @@
-import React from "react";
+import axios from "axios";
+import React, { useState } from "react";
 import GobackButton from "../components/GobackButton";
 import { useGlobalContext } from "../context";
 import { Tags } from "../data/headerData";
+import submitFeedback from "../utils/postFeedback";
 
 const FeedbackNew = () => {
-  const { dropDown, setDropDown, checked, setChecked } = useGlobalContext();
+  const [title, updateTitle] = useState("");
+  const [description, updateDescription] = useState("");
+  const [category, updateCategory] = useState("");
+  const { dropDown, categories } = useGlobalContext();
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const data = {
+      title,
+      description,
+      category,
+    };
+    await axios.post("http://localhost:4000/api/feedbacks", data);
+    updateTitle("");
+    updateDescription("");
+    updateCategory("");
+  };
 
   return (
     <div className="flex flex-col gap-y-9 justify-center items-center pt-10 pb-16 px-6 tablet:pt-14 tablet:pb-56 tablet:px-28 laptop:pt-20 laptop:px-72 laptop:pb-24 desktop:pt-24 desktop:pb-44 desktop:px-450">
@@ -51,6 +69,8 @@ const FeedbackNew = () => {
             <input
               type="text"
               id="title"
+              value={title}
+              onChange={(e) => updateTitle(e.target.value)}
               className="h-12 bg-Ghost-White rounded-md border-none text-Jewel-Cave text-body-3 active: border-The-Rainbow-Fish border"
             />
           </section>
@@ -66,10 +86,19 @@ const FeedbackNew = () => {
               Choose a category for your feedback
             </label>
             <div className="custom_select relative">
-              <select className="h-12 w-full bg-Ghost-White rounded-md border-none text-Jewel-Cave text-body-3 active: border-The-Rainbow-Fish border ">
+              <select
+                value={category}
+                onChange={(e) => {
+                  updateCategory(e.target.value);
+                }}
+                className="h-12 w-full bg-Ghost-White rounded-md border-none text-Jewel-Cave text-body-3 active: border-The-Rainbow-Fish border "
+              >
                 {Tags.map((item, index) => {
                   return (
-                    <option key={index} className="text-body-3 text-Jewel-Cave">
+                    <option
+                      key={index}
+                      className="text-body-3 text-Jewel-Cave capitalize"
+                    >
                       {item}
                     </option>
                   );
@@ -103,30 +132,27 @@ const FeedbackNew = () => {
 
           <section className="flex flex-col">
             <h3 className="font-bold text-body-3 mb-1 text-Raven-Night">
-              Feedback Title
+              Feedback Detail
             </h3>
             <label
               className=" font-normal mb-4 text-Ocean-Night text-body-3"
               htmlFor="title"
             >
-              Add a short, descriptive headline
+              Include any specific comments on what should be improved, added,
+              etc.
             </label>
             <textarea
               type="text"
               id="title"
               className="h-30 bg-Ghost-White rounded-md border-none text-Jewel-Cave text-body-3 active: border-The-Rainbow-Fish tablet:h-24"
+              value={description}
+              onChange={(e) => updateDescription(e.target.value)}
             />
-            {/* <input
-              id="title"
-              className=" bg-Ghost-White h-12"
-              // value={title}
-              // placeholder="title"
-              // onChange={}
-            /> */}
           </section>
         </div>
         <div className="flex flex-col gap-y-4 justify-center items-center w-full tablet:flex-row tablet:gap-y-0 tablet:justify-end tablet:gap-x-4">
           <button
+            onClick={handleSubmit}
             type="button"
             className=" bg-Singapore-Orchid rounded-default w-full h-11 hover:bg-After-Party-Pink transition-all duration-500 text-heading-4 text-Cotton-Ball text-center tablet:w-36 tablet:order-2"
           >

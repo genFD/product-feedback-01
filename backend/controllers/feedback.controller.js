@@ -20,6 +20,7 @@ const getFeedback = handleAsync(async (req, res) => {
 
 const createFeedback = handleAsync(async (req, res) => {
   const { title, category, description } = req.body;
+  console.log(req.body);
   if (!title || !category || !description) {
     res.status(StatusCodes.BAD_REQUEST);
     throw new Error('Please complete the required fields');
