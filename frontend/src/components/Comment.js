@@ -3,7 +3,7 @@ import profilePic from "../assets/user-images/image-elijah.jpg";
 import { useGlobalContext } from "../context";
 import ReplyInput from "./ReplyInput";
 
-const Comment = () => {
+const Comment = ({ comments }) => {
   const [value, setValue] = useState(0);
   const { showReplyInput, setShowReplyInput } = useGlobalContext();
 

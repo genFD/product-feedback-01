@@ -28,18 +28,12 @@ app.use(
   })
 );
 
-// app.use(
-//   '/api',
-//   createProxyMiddleware({
-//     target: 'http://localhost:1234',
-//     changeOrigin: true,
-//   })
-// );
 app.use('/api/users', userRoutes);
 app.use('/api/feedbacks', feedbackRoutes);
+
 app.use(handleError);
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 4000;
 const startServer = async () => {
   try {
     await connectDatabase();

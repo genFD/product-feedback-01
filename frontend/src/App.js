@@ -20,7 +20,7 @@ const App = () => {
             <Routes>
               <Route path="/ds" element={<DesignSystem />} />
               <Route path="/" element={<Home />} />
-              <Route path="/feedbackdetail" element={<FeedbackDetail />} />
+              <Route path="/feedbackdetail/:id" element={<FeedbackDetail />} />
               <Route path="/feedbackedit" element={<FeedbackEdit />} />
               <Route path="/feedbacknew" element={<FeedbackNew />} />
               <Route path="/roadmap" element={<Roadmap />} />

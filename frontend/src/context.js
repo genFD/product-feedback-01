@@ -17,8 +17,10 @@ const AppProvider = ({ children }) => {
   const [requestsList, setRequestsList] = useState([]);
   const [usersData, setUsersData] = useState(data);
 
+  const serverUrl = "http://localhost:4000/api/feedbacks";
+
   const fetchRequests = async () => {
-    const { data } = await axios.get(`http://localhost:4000/api/feedbacks`);
+    const { data } = await axios.get(serverUrl);
     setRequestsList(data);
   };
 
@@ -55,6 +57,7 @@ const AppProvider = ({ children }) => {
   return (
     <AppContext.Provider
       value={{
+        serverUrl,
         categories,
         statuses,
         suggestions,
